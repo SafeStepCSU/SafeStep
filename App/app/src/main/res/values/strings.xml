@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SSEP</string>
+    <string name="title_activity_login_screen">LoginScreen</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="sensor_1">Sensor 1: </string>
+    <string name="sensor_2">Sensor 2: </string>
+    <string name="sensor_3">Sensor 3: </string>
+    <string name="sensor_4">Sensor 4: </string>
+    <string name="sensor_5">Sensor 5: </string>
+    <string name="normal">Normal</string>
+    <string name="abnormal">Abnormal</string>
+</resources>
