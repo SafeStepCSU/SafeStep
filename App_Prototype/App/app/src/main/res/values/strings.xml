@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="sign_in">Sign In</string>
+    <string name="cofirm_password">Cofirm Password</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="hello">Hello</string>
+    <string name="john_doe">John Doe</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+</resources>
