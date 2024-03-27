@@ -1,5 +1,6 @@
 plugins {
-    id("com.android.application")
+    id ("com.android.application")
+    id("com.chaquo.python")
 }
 
 android {
@@ -14,6 +15,12 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters.add("arm64-v8a")
+            abiFilters.add("x86")
+            abiFilters.add("x86_64")
+        }
     }
 
     buildTypes {
@@ -26,10 +33,38 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions ("pyVersion")
+    productFlavors {
+        create("py310") { dimension = "pyVersion" }
+        create("py311") { dimension = "pyVersion" }
+    }
+
+    chaquopy {
+        productFlavors {
+            getByName("py310") { version = "3.10" }
+            getByName("py311") { version = "3.11" }
+        }
+
+        defaultConfig {
+            version = "3.8"
+            buildPython("C:/Users/cxwin/AppData/Local/Programs/Python/Python311/python.exe")
+
+            pip {
+                // A requirement specifier, with or without a version number:
+                install("numpy")
+            }
+        }
+
+        sourceSets {
+            getByName("main") {
+                srcDir("src/main/python")
+            }
+        }
+    }
 }
 
 dependencies {
-
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
@@ -38,3 +73,4 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+
